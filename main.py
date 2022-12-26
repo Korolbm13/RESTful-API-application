@@ -64,8 +64,9 @@ class MainList(Resource):
         return course
 
     def get(self):
-        page = request.args.get('page', 1, type=int)
-        courses = db.session.query(Course).paginate(page=page, per_page=4)
+        page = request.args.get('page', 2, type=int)
+        per_page = request.args.get('page', 4, type=int)
+        courses = db.session.query(Course).paginate(page=page, per_page=per_page)
         courses = [x.as_dict for x in courses.items]
         return courses
 
