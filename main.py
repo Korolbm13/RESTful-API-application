@@ -1,11 +1,15 @@
-from flask import Flask, request
+import connexion
+from flask import request, Flask
 from flask_restful import Api, Resource
 from flask_sqlalchemy import SQLAlchemy
 
 
 
+
 api = Api()
 db = SQLAlchemy()
+app = connexion.App(__name__, specification_dir="./")
+app.add_api("swagger.yaml")
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///:memory:"
 db.init_app(app)
