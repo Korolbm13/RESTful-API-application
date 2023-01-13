@@ -22,7 +22,7 @@ res = requests.post("http://127.0.0.1:3000/api/courses/", {"name": "Q", "videos"
 res = requests.post("http://127.0.0.1:3000/api/courses/", {"name": "R", "videos": 22})
 res = requests.post("http://127.0.0.1:3000/api/courses/", {"name": "S", "videos": 35})
 res = requests.post("http://127.0.0.1:3000/api/courses/", {"name": "T", "videos": 34})
-res = requests.get("http://127.0.0.1:3000/api/courses/")
+res = requests.get("http://127.0.0.1:3000/api/courses?page=1&on_page=12")
 
 
 

@@ -3,7 +3,7 @@ openapi: 3.0.0
 info:
   title: Flask REST API
   description: An API about catalog of courses
-  version: "1.0"
+  version: "1.1"
 servers:
 - url: https://virtserver.swaggerhub.com/korolb.m13/Courses/1.0
   description: SwaggerHub API Auto Mocking
@@ -59,27 +59,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/course'
   /course/{id}:
-    get:
-      tags:
-      - Course
-      summary: Метод получения курса по id
-      operationId: requests.get.id
-      parameters:
-      - name: id
-        in: path
-        description: Course_id
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: integer
-      responses:
-        "200":
-          description: Course
-          content:
-            application/json;charset=UTF-8:
-              schema:
-                $ref: '#/components/schemas/course'
     put:
       tags:
       - Course
